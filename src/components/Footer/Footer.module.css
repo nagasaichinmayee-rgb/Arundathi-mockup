@@ -1,0 +1,88 @@
+.footer {
+  background: var(--text);
+  color: rgba(255, 255, 255, 0.75);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem) 1.5rem;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+}
+
+.brand {}
+
+.logo {
+  height: 36px;
+  width: auto;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+}
+
+.brandDesc {
+  font-size: var(--step--1);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 300px;
+}
+
+.col {}
+
+.colHead {
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.colList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.colLink {
+  font-size: var(--step--1);
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s;
+}
+
+.colLink:hover { color: var(--white); }
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: var(--step--1);
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.bottomLinks a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--step--1);
+  transition: color 0.2s;
+}
+
+.bottomLinks a:hover { color: var(--white); }
+
+@media (max-width: 1024px) {
+  .top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .top { grid-template-columns: 1fr; gap: 2rem; }
+}

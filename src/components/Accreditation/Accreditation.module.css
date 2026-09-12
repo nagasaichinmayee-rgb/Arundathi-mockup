@@ -1,0 +1,46 @@
+.bar {
+  background: var(--ground-2);
+  padding: 2rem clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+}
+
+.label {
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.chips {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--text);
+  padding: 0.4rem 0.8rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  letter-spacing: 0.06em;
+}
+
+.chip::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+}

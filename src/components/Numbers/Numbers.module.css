@@ -1,0 +1,43 @@
+.numbers {
+  background: var(--ground);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: clamp(3rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.val {
+  font-family: var(--f-display);
+  font-size: var(--step-4);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.sup {
+  font-size: var(--step-3);
+  font-weight: 600;
+  color: var(--accent-2);
+}
+
+.label {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}

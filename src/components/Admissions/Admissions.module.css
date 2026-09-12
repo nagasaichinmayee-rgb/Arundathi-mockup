@@ -1,0 +1,147 @@
+.admissions {
+  background: var(--ground);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+/* ── Steps ───────────────────────────────────────────────────────── */
+.steps {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 1rem;
+  position: relative;
+}
+
+.stepLine {
+  position: absolute;
+  left: 23px;
+  top: 48px;
+  width: 1px;
+  height: calc(100% - 12px);
+  background: var(--border);
+}
+
+.stepNum {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-display);
+  font-size: var(--step-1);
+  font-weight: 600;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.step:hover .stepNum {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.stepBody {
+  padding-bottom: 2rem;
+}
+
+.stepTitle {
+  font-family: var(--f-display);
+  font-size: var(--step-1);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.stepDesc {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Aside cards ─────────────────────────────────────────────────── */
+.aside {
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--accent);
+  border-radius: 20px;
+  padding: 2.5rem;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.deadlineBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(232, 146, 58, 0.15);
+  border: 1px solid rgba(232, 146, 58, 0.35);
+  color: var(--accent-2);
+  font-size: var(--step--1);
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  width: fit-content;
+}
+
+.cardTitle {
+  font-family: var(--f-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+}
+
+.cardDesc {
+  font-size: var(--step--1);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.cardAlt {
+  background: var(--ground-2);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cardAltTitle {
+  font-family: var(--f-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cardAltDesc {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .inner { grid-template-columns: 1fr; }
+  .aside { position: static; }
+}
