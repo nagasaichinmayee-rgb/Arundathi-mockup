@@ -1,71 +1,59 @@
+"use client";
+
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.hero} aria-label="Hero — welcome">
-      {/* Full-bleed video */}
-      <div className={styles.videoWrap}>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-          className={styles.video}
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <section className={styles.hero} aria-label="Hero">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        className={styles.video}
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
 
-      {/* Gradient scrim for legibility */}
       <div className={styles.scrim} aria-hidden="true" />
 
-      {/* Main copy — bottom-left, editorial placement */}
-      <div className={styles.content}>
-        <p className={styles.eyebrow}>Arundathi Institute of Medical Sciences</p>
-        <h1 className={styles.headline}>
-          Medicine rooted<br />
-          in <em>purpose,</em><br />
-          not just practice.
-        </h1>
-        <p className={styles.sub}>
-          A medical institution built for the next generation of healers — where
-          clinical rigour meets compassionate care, and every student is prepared
-          to lead.
-        </p>
-        <div className={styles.actions}>
-          <a href="#admissions" className="btn btn--primary">
-            Explore Admissions
-          </a>
-          <a href="#discover" className="btn btn--ghost">
-            Discover AIMS
-          </a>
+      {/* Search bar */}
+      <div className={styles.searchWrap}>
+        <div className={styles.search}>
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="6.5" stroke="rgba(255,255,255,.55)" strokeWidth="1.8" />
+            <path d="M14 14l3.5 3.5" stroke="rgba(255,255,255,.55)" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search For Doctors, Specialities And Health Check Packages..."
+            aria-label="Search"
+            className={styles.searchInput}
+          />
+          <button className={styles.searchBtn} aria-label="Search">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="6.5" stroke="white" strokeWidth="1.8" />
+              <path d="M14 14l3.5 3.5" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Floating stat chips */}
-      <div className={styles.stats} aria-label="Key figures">
-        <div className={styles.stat}>
-          <span className={styles.statNum}>
-            1200<span className={styles.statSup}>+</span>
-          </span>
-          <span className={styles.statLabel}>Beds</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statNum}>42</span>
-          <span className={styles.statLabel}>Departments</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statNum}>
-            98<span className={styles.statSup}>%</span>
-          </span>
-          <span className={styles.statLabel}>Pass Rate</span>
-        </div>
-      </div>
-
-      <div className={styles.scrollIndicator} aria-hidden="true">
-        Scroll
+      {/* 4 action strips */}
+      <div className={styles.actions}>
+        {[
+          "Book Appointment",
+          "Find Department",
+          "Book Health Checkup",
+          "Get Expert Opinion",
+        ].map((label) => (
+          <button key={label} className={styles.actionBtn}>
+            <span>{label}</span>
+            <span className={styles.actionCircle}>→</span>
+          </button>
+        ))}
       </div>
     </section>
   );
